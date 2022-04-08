@@ -9,7 +9,7 @@ export class PhotoController {
   constructor(private readonly photoService: PhotoService) {}
 
   @GrpcStreamMethod('PhotoService')
-  GetAll(data$: Observable<GetAllPhotosParams>) {
-    return this.photoService.getPhotos(data$);
+  GetAll(params: Observable<GetAllPhotosParams>) {
+    return this.photoService.getPhotos(params);
   }
 }
