@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package photo;
+
+service PhotoService {
+  rpc GetAll (stream GetAllParams) returns (stream GetAllPhotoResponse) {}
+}
+
+message GetAllParams {
+  int32 limit = 1;
+  string tags = 2;
+}
+
+message GetAllPhotoResponse {
+  repeated Photo items = 1;
+}
+
+message Photo {
+  int32 id = 1;
+  string title = 2;
+  string link = 3;
+}
