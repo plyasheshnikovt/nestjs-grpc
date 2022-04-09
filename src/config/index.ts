@@ -10,6 +10,5 @@ export const ConfigModule = ConfigModuleRoot.forRoot({
     DB_USERNAME: Joi.string().required(),
     DB_PASSWORD: Joi.string().required(),
     DB_NAME: Joi.string().required(),
-    TEST_DB_NAME: Joi.string().required(),
   }),
 });
