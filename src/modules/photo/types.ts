@@ -10,10 +10,14 @@ export interface CreatePhotoObject {
   tags: string;
 }
 
-export interface GetAllPhotoResponse {
+export interface PhotoItem {
   id: number;
   title: string;
   link: string;
+}
+
+export interface GetAllPhotoResponse {
+  items: PhotoItem[];
 }
 
 export interface GetAllPhotosParams {

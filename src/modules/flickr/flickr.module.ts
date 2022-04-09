@@ -2,12 +2,16 @@ import { Module } from '@nestjs/common';
 
 import { FlickrLoadService } from './flickrLoad.service';
 import { FlickrToPhotoMapperService } from './flickrToPhotoMapper.service';
-import { LoggerModule } from '../logger/logger.module';
+import { FlickrParserService } from './flickrParser.service';
 import { PhotoModule } from '../photo/photo.module';
 
 @Module({
-  imports: [LoggerModule, PhotoModule],
+  imports: [PhotoModule],
   controllers: [],
-  providers: [FlickrLoadService, FlickrToPhotoMapperService],
+  providers: [
+    FlickrLoadService,
+    FlickrToPhotoMapperService,
+    FlickrParserService,
+  ],
 })
 export class FlickrModule {}

@@ -2,7 +2,12 @@ import { Injectable, Inject } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import constants from '../../constants';
 import { PhotoEntity } from '../../db/entities/photo.entity';
-import { CreatePhotoObject, GetAllPhotosParams } from './types';
+import {
+  CreatePhotoObject,
+  GetAllPhotoResponse,
+  GetAllPhotosParams,
+  PhotoItem,
+} from './types';
 
 @Injectable()
 export class PhotoRepository {
@@ -11,7 +16,11 @@ export class PhotoRepository {
     private photoRepository: Repository<PhotoEntity>,
   ) {}
 
-  getAllPhotos({ limit = 10, tags, ids }: GetAllPhotosParams) {
+  getAllPhotos({
+    limit = 10,
+    tags,
+    ids,
+  }: GetAllPhotosParams): Promise<PhotoItem[]> {
     const query = this.photoRepository
       .createQueryBuilder()
       .select(['id', 'title', 'link'])
