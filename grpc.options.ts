@@ -5,10 +5,7 @@ export const grpcOptions: ClientOptions = {
   transport: Transport.GRPC,
   options: {
     url: 'localhost:5000',
-    package: ['hero', 'photo'],
-    protoPath: [
-      join(__dirname, './modules/photo/photo.proto'),
-      join(__dirname, './modules/hero/hero.proto'),
-    ],
+    package: ['photo'],
+    protoPath: [join(__dirname, './modules/photo/photo.proto')],
   },
 };
