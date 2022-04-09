@@ -1,7 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { Failure, Success } from 'runtypes';
 
-import { CreatePhotoObject } from '../photo/types';
 import { FlickrObject, FlickrObjectsRunType, RequestResponse } from './types';
 import { FlickrToPhotoMapperService } from './flickrToPhotoMapper.service';
 

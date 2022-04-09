@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common';
+import { Subject, Observable, from, switchMap, map, merge } from 'rxjs';
+
 import {
   CreatePhotoObject,
   GetAllPhotoResponse,
   GetAllPhotosParams,
 } from './types';
-import { Subject, Observable, from, switchMap, map, merge } from 'rxjs';
 import { PhotoRepository } from './photo.repository';
 
 @Injectable()

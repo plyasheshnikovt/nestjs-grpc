@@ -1,5 +1,6 @@
 import { createConnection } from 'typeorm';
 import { ConfigService } from '@nestjs/config';
+
 import constants from '../constants';
 
 export const databaseProvider = {

@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { FlickrObject } from 'src/modules/flickr/types';
-import { CreatePhotoObject } from 'src/modules/photo/types';
+
+import { FlickrObject } from './types';
+import { CreatePhotoObject } from '../photo/types';
 
 @Injectable()
 export class FlickrToPhotoMapperService {

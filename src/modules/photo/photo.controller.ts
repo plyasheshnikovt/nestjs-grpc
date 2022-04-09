@@ -1,7 +1,8 @@
 import { Controller } from '@nestjs/common';
-import { GrpcStreamMethod } from '@nestjs/microservices';
-import { PhotoService } from './photo.service';
 import { Observable } from 'rxjs';
+import { GrpcStreamMethod } from '@nestjs/microservices';
+
+import { PhotoService } from './photo.service';
 import { GetAllPhotoResponse, GetAllPhotosParams } from './types';
 
 @Controller('photo')
