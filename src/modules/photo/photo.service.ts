@@ -24,11 +24,11 @@ export class PhotoService {
     );
   }
 
-  private getLastPhotosObservable(
-    params: GetAllPhotosParams,
-  ): Observable<GetAllPhotoResponse> {
+  private getLastPhotosObservable({
+    tags,
+  }: GetAllPhotosParams): Observable<GetAllPhotoResponse> {
     return this.newPhotoIdsObservable.pipe(
-      switchMap((ids) => this.getAllPhotosObservable({ ...params, ids })),
+      switchMap((ids) => this.getAllPhotosObservable({ tags, ids })),
     );
   }
 
